@@ -19,7 +19,7 @@ public class OutOfBandTransmission {
 	
 	public String send(String content) throws IOException {
 		var uuid = UUID.randomUUID();
-		var file = new File(path, uuid.toString() + ".txt");
+		var file = new File(path, uuid + ".txt");
 		FileUtils.writeStringToFile(file, content, StandardCharsets.UTF_8);
 		return generator.replace("${file}", file.getName());
 	}
